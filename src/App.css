@@ -1,38 +1,122 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f0f4f8;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  color: #2a5d84;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.search-form {
+  margin: 20px auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 10px;
+}
+
+.search-form input {
+  padding: 10px;
+  border: 2px solid #2a5d84;
+  border-radius: 8px;
+  outline: none;
+}
+
+.search-form button {
+  padding: 10px 15px;
+  background-color: #2a5d84;
   color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.search-form button:hover {
+  background-color: #1f4a68;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.book-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.book-card {
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.book-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.pagination {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.pagination button {
+  padding: 8px 12px;
+  border: none;
+  background-color: #2a5d84;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  background-color: #888;
+  cursor: not-allowed;
+}
+
+/* 🌙 Dark Mode Styles */
+.App.dark {
+  background-color: #121212;
+  color: #eee;
+}
+
+.App.dark .book-card {
+  background-color: #1e1e1e;
+}
+
+.App.dark .search-form input {
+  background-color: #333;
+  color: #eee;
+  border-color: #555;
+}
+
+.App.dark .search-form button {
+  background-color: #444;
+}
+
+.dark-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #2a5d84;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.dark-toggle:hover {
+  background: #1f4a68;
 }
